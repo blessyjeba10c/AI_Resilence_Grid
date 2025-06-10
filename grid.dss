@@ -1,0 +1,32 @@
+// ====== Grid Simulation Example ======
+Clear
+New Circuit.BlackoutExample basekv=11 pu=1.0 phases=3 bus1=SourceBus
+
+// ====== Voltage Bases ======
+Set VoltageBases=[11, 0.4]
+CalcVoltageBases
+
+// ====== Source Definition ======
+New Vsource.Source Bus1=SourceBus phases=3 basekv=11 pu=1.0 angle=0 frequency=50
+
+// ====== Line from Source to Transformer ======
+New Line.Line1 Bus1=SourceBus Bus2=BusTx1 phases=3 linecode=336ACSR length=2 units=km
+
+// ====== Transformer ======
+New Transformer.Tx1 phases=3 windings=2 buses=[BusTx1,BusTx2] conns=[wye,wye] kvs=[11,0.4] kvas=[500,500] %Rs=[0.5,0.5] Xhl=6
+
+// ====== Line to Load ======
+New Line.Line2 Bus1=BusTx2 Bus2=LoadBus phases=3 linecode=336ACSR length=1 units=km
+
+// ====== Load Definition ======
+New Load.Load1 Bus1=LoadBus phases=3 Conn=wye kV=0.4 kW=100 pf=0.95
+
+// ====== Fault (Simulate blackout condition) ======
+New Fault.F1 Bus1=BusTx2 phases=3 r=0.001
+
+// ====== Solve ======
+Solve
+
+// ====== Output Display ======
+Show Voltage LN Nodes
+Show Currents Elements
