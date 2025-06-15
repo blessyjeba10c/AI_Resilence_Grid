@@ -1,49 +1,43 @@
 # AI_Resilience_Grid
 
-## AI Resilience Grid: Blackout Prediction and Simulation
+# AI-Enhanced Simulation for Resilient Grids in Disaster Response
 
-This repository provides a complete pipeline for **predicting blackout risks in electrical grids using machine learning** and simulating those risks using **OpenDSS**. The system integrates **real-time weather** and **grid data** to assist in improving grid resilience and proactive outage management.
+## Problem Statement
 
----
+Natural disasters such as cyclones can lead to severe disruptions in electrical grids, impacting critical infrastructure and communities. There is a growing need for resilient grid management that integrates predictive capabilities with real-time simulation tools. This project addresses that need by developing an AI-assisted framework to predict blackout risks and simulate grid responses. By analyzing historical outage records, real-time weather patterns, and electrical parameters, the system enables proactive decision-making for prioritized restoration and resource optimization. The solution also features simulation environments to test and validate microgrid resilience during disaster-induced isolation scenarios.
 
-##  Project Overview
+## Methodology
 
-**Objective:**  
-Predict potential blackouts in electrical grids based on environmental and electrical parameters, and simulate their impact using OpenDSS.
+1. **Data Preparation**  
+   - Collected and curated synthetic datasets comprising weather variables (wind speed, rainfall, pressure), electrical load data, outage history, and blackout risk labels.
+   - Applied preprocessing techniques to handle class imbalance using SMOTE for better model training.
 
----
+2. **AI Model Development**  
+   - Used machine learning algorithms (primarily XGBoost) to build a predictive model for blackout risks.
+   - Performed hyperparameter tuning to improve model accuracy and generalization.
+   - Evaluated model performance using confusion matrix, classification reports, and accuracy metrics.
 
-##  Components
+3. **Grid Simulation using OpenDSS**  
+   - Generated automated OpenDSS (.dss) scripts to simulate various fault scenarios on an example grid.
+   - Simulated fault conditions and analyzed system behavior under blackout conditions.
 
-- Predictive Modeling with **XGBoost**
-- Confusion Matrix and Metrics Visualization
-- **Heatmap Visualization** of High-Risk Zones
-- **OpenDSS Simulation File Generation**
+4. **Visualization and Dashboard**  
+   - Created interactive heatmaps using Folium to display geographical high-risk zones for blackouts.
+   - Developed an interactive visualization dashboard using Power BI to provide real-time risk insights, trends, and simulation results for faster decision-making.
 
----
+## Features
 
-##  Dataset Description
+- Predictive blackout risk classification using machine learning
+- Confusion matrix visualization for performance evaluation
+- Geographic risk visualization through interactive heatmaps
+- OpenDSS integration for electrical grid simulation
+- Power BI dashboard for monitoring, analysis, and decision support
 
-| **Feature**          | **Description**                                 |
-|----------------------|-------------------------------------------------|
-| `Wind_Speed_kmph`    | Wind speed (km/h)                               |
-| `Rainfall_mm`        | Rainfall (mm)                                   |
-| `Pressure_hPa`       | Atmospheric pressure (hPa)                      |
-| `Voltage_V`          | Grid voltage (V)                                |
-| `Load_MW`            | Electrical load (MW)                            |
-| `Past_Outages_Count` | Number of previous outages                      |
-| `Blackout_Risk`      | Target label → `0 = Low risk, 1 = High risk`    |
+## Key Outcomes
 
----
-
-##  Features
-
-- Data preprocessing and balancing using **SMOTE**
-- Hyperparameter-tuned **XGBoost** classifier
-- **Classification Report** and **Confusion Matrix** visualization
-- Interactive **Heatmap** visualization using **Folium**
-- Automatic generation of **OpenDSS (.dss)** files for simulation
-
----
+- Proactive identification of potential blackout areas before disasters strike
+- Simulation-based analysis of fault impact on grid behavior
+- Enhanced visualization of risk zones and restoration processes
+- Framework that can be scaled and customized for real-world grid environments
 
 
