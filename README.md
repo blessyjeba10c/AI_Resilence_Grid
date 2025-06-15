@@ -40,5 +40,7 @@ Natural disasters such as cyclones can lead to severe disruptions in electrical 
 - Enhanced visualization of risk zones and restoration processes
 - Framework that can be scaled and customized for real-world grid environments
 
-<img src="https://github.com/user-attachments/assets/c73d7d55-1e3b-45c4-b439-cbadbc5bf050" width="400"/>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c73d7d55-1e3b-45c4-b439-cbadbc5bf050" width="400">
+</p>
 
